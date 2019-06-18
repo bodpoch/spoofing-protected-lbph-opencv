@@ -1,5 +1,4 @@
-<<<<<<< HEAD
-#------------------------------------------- APPLICATIONS ARE USING OPENCV 4.0---------------------------------------------
+#------------------------------------------- APPLICATIONS ARE USING OPENCV 4.0 --------------------
 
 
 #Face_Capture_With_Rotate.py: Running this file will capture 50 images of a person infront of with illumination and rotation correction.
@@ -19,7 +18,7 @@
 #Detect_blinks.py: This file will detect blinks in the camera stream
 							
 
-# ------------------FOLDERS -----------
+# ------------------FOLDERS --------------------
 
 #photodb --> Contains the images that will be used to train the recogniser
 
@@ -31,5 +30,3 @@
 
 
 #audioassist --> Contains a simple sound triggered when the ojbect is identified
-
->>>>>>>
