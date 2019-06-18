@@ -1,29 +1,33 @@
-# APPLICATIONS ARE USING OPENCV 4.0
+# Facial recognition system with local binary patterns histogram (LBPH) algorithm and spoofing protection
+
+## APPLICATIONS ARE USING OPENCV 4.0
 
 
-### Face_Capture_With_Rotate.py: Running this file will capture 50 images of a person infront of with illumination and rotation correction.
+## FILES
+
+Face_Capture_With_Rotate.py: Running this file will capture 50 images of a person infront of with illumination and rotation correction.
 
 
-### NameFind.py: This file contains all the functions.
+NameFind.py: This file contains all the functions.
 
 
-### Trainer.py: This file will train LBPH recognition algorithm using the images in the photodb folder.
+Trainer.py: This file will train LBPH recognition algorithm using the images in the photodb folder.
 
 
-### Rec_LBPH_Antispoofing.py:  This script will recognise faces from the camera feed using LBPH facial recognition algorithm and eye-blink spoofing protection.
+Rec_LBPH_Antispoofing.py:  This script will recognise faces from the camera feed using LBPH facial recognition algorithm and eye-blink spoofing protection.
 
-### Detect_blinks.py: This file will detect blinks in the camera stream
+Detect_blinks.py: This file will detect blinks in the camera stream
 							
 
-# FOLDERS
+## FOLDERS
 
-### photodb --> Contains the images that will be used to train the recogniser
-
-
-### Haar --> Contains Haar Cascades of OpenCV used in the applications
+photodb --> Contains the images that will be used to train the recogniser
 
 
-### recondata --> Contains the saved XML file with LBPH training data
+Haar --> Contains Haar Cascades of OpenCV used in the applications
 
 
-### audioassist --> Contains a simple sound triggered when the ojbect is identified
+recondata --> Contains the saved XML file with LBPH training data
+
+
+audioassist --> Contains a simple sound triggered when the ojbect is identified
