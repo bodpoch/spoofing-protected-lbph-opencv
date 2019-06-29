@@ -1,11 +1,9 @@
 import cv2  # Importing the opencv
 import numpy as np  # Import Numarical Python
 import NameFind
-import winsound
 import time
 import argparse
 from scipy.spatial import distance as dist
-import imutils
 from imutils import face_utils
 import argparse
 import dlib
@@ -144,18 +142,18 @@ while True:
                 #time.sleep(0.5)
                 # The Face is isolated and cropped
                 gray_face = gray[y: y + h, x: x + w]
-                cv2.imwrite("DLFD/image.jpg", gray_face)
+                #cv2.imwrite("image.jpg", gray_face)
                 eyes = eye_cascade.detectMultiScale(gray_face)
                 for (ex, ey, ew, eh) in eyes:
                     ID, conf = recognise.predict(gray_face)  # Determine the ID of the photo
-                    if conf < 3:
+                    confval = 3
+                    if conf < confval:
                         NAME = NameFind.ID2Name(ID, conf)
                         NameFind.DispID(x, y, w, h, NAME, gray)
                         print('ID', ID, '-', NAME, "{:.3f}".format(conf), '/',
-                              "{:.2f}".format(100 - ((conf - 1) / (3 - 1)) * 100),
+                              "{:.2f}".format(100 - ((conf - 1) / (confval - 1)) * 100),
                               '%')
                         # print(ID)
-                        winsound.PlaySound("audioassist/untitled.wav", winsound.SND_ASYNC | winsound.SND_ALIAS)
                         # time.sleep(0.2)
                         TOTAL = 0
                     else:
