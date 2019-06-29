@@ -24,11 +24,11 @@ print(faces)
 
 for (x, y, w, h) in faces:  # Frames  LOCATION X, Y  WIDTH, HEIGHT
 
-    Face = cv2.resize((gray[y: y + h, x: x + w]), (110, 110))  # The Face is isolated and cropped
+    Face = cv2.resize((gray[y: y + h, x: x + w]), (150, 150))  # The Face is isolated and cropped
 
     ID, conf = LBPH.predict(Face)  # LBPH RECOGNITION
 
-    confval = 10
+    confval = 4
     if (conf < confval):
         NAME = NameFind.ID2Name(ID, conf)
         NameFind.DispID(x, y, w, h, NAME, gray)
@@ -36,10 +36,10 @@ for (x, y, w, h) in faces:  # Frames  LOCATION X, Y  WIDTH, HEIGHT
               "{:.2f}".format(100 - ((conf - 1) / (confval - 1)) * 100),
               '%')
     else:
-        #print('0')
+        print('Not recognised')
         NAME = NameFind.ID2Name(0, conf)
         NameFind.DispID(x, y, w, h, NAME, gray)
-        print(ID)
+        # print(ID)
 
 cv2.imshow('LBPH Photo Recogniser', gray)  # IMAGE DISPLAY
 cv2.waitKey(0)

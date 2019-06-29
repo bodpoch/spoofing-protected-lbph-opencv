@@ -66,11 +66,11 @@ predictor = dlib.shape_predictor(args["shape_predictor"])
 print("[INFO] starting video stream thread...")
 #vs = FileVideoStream(args["video"]).start()
 #fileStream = True
-cap = cv2.VideoCapture(0)
+cap = cv2.VideoCapture(0)                                                       # Camera object
+# cap = cv2.VideoCapture('TestVid.wmv')                                         # Video object
 vs = cap
-# vs = VideoStream(usePiCamera=True).start()
+# vs = VideoStream(usePiCamera=True).start()                                    # Rapsberry PI
 fileStream = False
-#time.sleep(1.0)
 
 while True:
     ret, img = cap.read()  # Read the camera object

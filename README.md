@@ -14,9 +14,9 @@ some photos to photodb folder using **Face_Capture_With_Rotate.py** or manually.
 After that you need to run **Trainer.py** to create XML data for recognition method.
 
 
-  - Use **Rec_IMG_LBPH.py** to recognise image
+  - Use **Rec_IMG_LBPH.py** or **Rec_IMG_LBPH_DLD.py** to recognise image
   - Use **Rec_LBPH_Antispoofing.py** to 
-do real-time recognition using videosequence
+do real-time recognition using camera or videostream
 
 Both files have parameters *confval* that are used as threshold
 and to indicate relative recognition percent rate. Low *confval* means high FRR, high *confval* means high FAR.
@@ -29,15 +29,22 @@ and to indicate relative recognition percent rate. Low *confval* means high FRR,
 
 **Trainer.py:** This file will train LBPH recognition algorithm using the images in the photodb folder.
 
-**Rec_LBPH_Antispoofing.py:**  This script will recognise faces from the camera feed using LBPH facial recognition algorithm and eye-blink spoofing protection.
+**Rec_LBPH_Antispoofing.py:**  This script will recognise faces from the camera feed using LBPH facial recognition algorithm and eye-blink based
+liveness detection.
 
 **Detect_blinks.py:** This file will detect blinks in the camera stream
 
-**Rec_IMG_LBPH.py:** This file will recognise faces in the sample image
+**Rec_IMG_LBPH.py:** Script to recognise faces in the sample image using Haar-cascades and LBPH
+
+**Rec_IMG_LBPH_DLD.py** Script to recognise faces in the sample image using Deep Learning detection and LBPH
 
 **shape_predictor_68_face_landmarks.dat:** pre-trained dlib facial landmark predictor
 
+**res10_300x300_ssd_iter_140000.caffemodel** Caffe framework model for face detection
+
 **MYIMG.jpg:** sample image
+
+**thumb.jpg** subimage
 
 **Names.txt:** contains ID and NAME of all persons in the database
 							
