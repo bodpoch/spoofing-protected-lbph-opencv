@@ -5,8 +5,8 @@
 
 ## Quick tutorial
 
-To get started you need to to have python 3 set up on your machine as well as the OpenCV library v 4.0 or higher:
-https://github.com/opencv/opencv/. Clone the repository and it's ready to be used. You may need to install additional
+To get started you need to to have python 3 set up on your machine as well as the OpenCV library v 4.0.0 or higher:
+https://github.com/opencv/opencv/. You may need to install additional
 python libraries, such as: numpy, scipy, imutils and dlib.
 
 Initially, database contains 3 persons. You can clear **Names.txt** file and add
@@ -19,7 +19,9 @@ After that you need to run **Trainer.py** to create XML data for recognition met
 do real-time recognition using camera or videostream
 
 Both files have parameters *confval* that are used as threshold
-and to indicate relative recognition percent rate. Low *confval* means high FRR, high *confval* means high FAR.
+and to indicate relative recognition percent rate. Low *confval* means high FRR, high *confval* means high FAR in terms 
+of biometric security error. You can manipulate with **cv2.face.LBPHFaceRecognizer_create(radius, neghbors, grid_x, grid_y, threshold)** method parameters 
+in order to get better results. Read more info about OpenCV LBPH method here: https://docs.opencv.org/4.1.0/df/d25/classcv_1_1face_1_1LBPHFaceRecognizer.html
 
 ## FILES
 
